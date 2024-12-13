@@ -6,3 +6,4 @@ terraform-azure/
 ├── compute.tf       # Compute resources (VMs, Availability Set)
 ├── loadbalancer.tf  # Load Balancer configurations
 ├── storage.tf       # Storage account
+├── references.tf    # Contains all reference links to build the Tf files

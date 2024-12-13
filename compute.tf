@@ -1,6 +1,6 @@
 # Availability Set
-resource "azurerm_availability_set" "example" {
-  name                         = "availset-example"
+resource "azurerm_availability_set" "availabilityset_poc" {
+  name                         = "availset01"
   resource_group_name      = azurerm_resource_group.rg.name
   location                     = azurerm_resource_group.rg.location
   managed                      = true
@@ -27,7 +27,7 @@ resource "azurerm_virtual_machine" "vm_sub1_1" {
   name                  = "vm-sub1-1"
   resource_group_name      = azurerm_resource_group.rg.name
   location              = azurerm_resource_group.rg.location
-  availability_set_id   = azurerm_availability_set.example.id
+  availability_set_id   = azurerm_availability_set.availabilityset_poc.id
   vm_size = "Standard_DS1_v2"
   network_interface_ids = [azurerm_network_interface.nic_sub1.id]
   storage_image_reference {
@@ -61,7 +61,7 @@ resource "azurerm_virtual_machine" "vm_sub1_2" {
   name                  = "vm-sub1-2"
    resource_group_name      = azurerm_resource_group.rg.name
   location              = azurerm_resource_group.rg.location
-  availability_set_id   = azurerm_availability_set.example.id
+  availability_set_id   = azurerm_availability_set.availabilityset_poc.id
   vm_size = "Standard_DS1_v2"
   network_interface_ids = [azurerm_network_interface.nic_sub1.id]
   storage_image_reference {
